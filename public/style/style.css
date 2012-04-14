@@ -1,0 +1,313 @@
+/*
+    Document   : style.css
+    Created on : 2011-8-31, 14:56:52
+    Author     : y109
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+/*
+   TODO customize this sample style
+   Syntax recommendation http://www.w3.org/TR/REC-CSS2/
+*/
+html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,a,code,em,img,q,small,strong,dd,dl,dt,li,ol,ul,fieldset,form,label,table,tbody,tr,th,td,input{margin:0;padding:0}
+body{font-size:12px;font-family:"Microsoft Yahei","微软雅黑",Tahoma,Arial,Helvetica,STHeiti;_font-family:Tahoma,Arial,Helvetica,STHeiti;cursor:default}
+a img,:link img,:visited img{border:0}
+table{border-collapse:collapse}
+ul{list-style:none}
+body{
+    background-color:#07527F;
+    background-color: #D3D9DF;
+}
+root {
+    display: block;
+}
+.mainBody{
+    display: inline-block;
+    width: 100%;
+}
+div#content {
+    width: 1000px;
+    margin: 0 auto;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    position: relative;
+}
+.mainContent{
+    background-color: #fff;
+    width:100%;
+    padding: 10px 5px 5px 5px;
+    margin: 20px 0px 20px 0px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius:5px;
+}
+.mainNav{
+    margin: 0 auto;
+    display: inline-block;
+    width: 100%;
+    height: 51px;
+    background-color: #006FBB;
+    background-color: #0000A0;
+    background-color: #193E5C;
+}
+.mainNav .logo {
+    margin:10px 0px 0px 200px;
+    z-index: 9999;
+    float: left;
+    height: 30px;
+    width: 180px;
+    outline: none;
+    background: url(/images/logo.png) no-repeat center center;
+}
+.mainNav ul{
+    height:48px;
+    position: relative;
+}
+.mainNav a{
+    color: #ffffff;
+    float: left;
+    height: 51px;
+    font-size: 14px;
+    line-height: 50px;
+    color: #a3b2be;
+    padding: 0 6px;
+    text-decoration: none;
+    font-family: "Microsoft Yahei","微软雅黑",Tahoma,Arial,Helvetica,STHeiti;
+}
+.mainNav a:hover,a:active,a:focus {
+    color: #ffffff;
+}
+.mainNav li.current {
+}
+.mainNav li.current a {
+    color: #ffffff;
+}
+.mainNav ul li{
+    float: left;
+    list-style: none;
+    display: block;
+    padding: 6px 0px 0px 6px;
+}
+.subMenu{
+    display: inline-block;
+    width: 100%;
+    height: 30px;
+    background-color: gainsboro;
+    background-color: #f2f2f2;
+    border-bottom: 1px #cccccc dotted;
+}
+.subMenu ul li{
+    float: left;
+    list-style: none;
+    display: block;
+    padding: 6px 0px 0px 6px;
+}
+.subMenu .menu{
+    width:200px;
+    float: left;
+}
+.floatLeft{
+    float:left;
+}
+.padding6{
+    padding:6px;
+}
+.clear{
+    clear:both;
+}
+
+.message{
+    display: inline-block;
+    width:80%;
+    clear: both;
+    margin: 20px;
+}
+
+.serverFilter{
+    display: inline-block;
+    margin: 0px 10px 0px 0px;
+    float: right;
+}
+.serverFilter ul li{
+    float:left;
+    list-style: none;
+    padding: 5px 0px 0px 6px;
+}
+.serverFilter input{
+    width: 80px;
+}
+.paginator{
+    display: inline-block;
+    float: right;
+    background: #EEE;
+    padding: 10px;
+    border-radius: 6px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    text-align: center;
+}
+.pageTitle{
+    font-family: "Microsoft Yahei","微软雅黑",Tahoma,Arial,Helvetica,STHeiti;
+    color: #6FAD1B;
+    font-size: 18px;
+    padding: 0px 10px 2px 10px;
+    margin-bottom: 3px;
+    border-bottom: 1px #333333 dotted;
+}
+.etao_form{
+    line-height: 250%;
+    display:table-cell;
+}
+.etao_form .title{
+    display: inline-block;
+    width: 100px;
+    background-color: #fafafa;
+    font-size: 16px;
+    vertical-align: top;
+    text-align: right;
+}
+.etao_form input[type=submit]{
+    font-family: "Microsoft Yahei","微软雅黑";
+    font-size: 18px;
+    width: 80px;
+    height: 35px;
+}
+
+/** 机柜图 **/
+.cabinetList{
+    margin: 0px 10px 0px 10px;
+}
+.cabinetDiv{
+    float: left;
+    width: 200px;
+    border: 4px #666666 double;
+    margin: 10px 0px 10px 10px;
+    padding: 0px;
+}
+.cabinetDiv .description{
+    padding: 6px 10px 10px 10px;
+}
+.cabinetDiv .description strong{
+    display: inline-block;
+    width:100%;
+    border-bottom: 1px #111111 dotted;
+    margin: 0 auto;
+}
+.cabinetDiv .deviceList{
+    border: 1px #666666 solid;
+    margin: 10px 10px 5px 20px;
+    padding: 0px 0px 0px 5px;
+}
+.cabinetDiv .deviceList li{
+    border-bottom: 1px #333333 dotted;
+}
+.cabinetList .otherInfo{
+    margin: 0px 6px 6px 6px;
+}
+.cabinetList a{
+    color:#000000;
+    text-decoration: none;
+}
+
+.exception pre {
+    white-space: pre-wrap; /* CSS-3 */
+    white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+    white-space: -pre-wrap; /* Opera 4-6 */
+    white-space: -o-pre-wrap; /* Opera 7 */
+    word-wrap: break-word; /* Internet Explorer 5.5+ */
+    background: #EDF4F8;
+    padding: 10px 25px 10px 20px;
+    border: 1px solid #CDE7F4;
+}
+
+.equipmentInfo li{
+    list-style: none;
+    line-height: 150%;
+}
+.equipmentInfo .title{
+    float:left;
+    display: inline-block;
+    width: 100px;
+    font-weight: bold;
+    padding: 0px 8px 0px 8px;
+    border-bottom: 0px #f0f0f0 solid;
+    clear: both;
+}
+.equipmentInfo .body{
+    margin-left: 8px;
+    float:left;
+}
+.combo-search {
+    padding:6px;
+}
+.combo-search a{
+    text-decoration: none;
+}
+.search-item h3 {
+    display: block;
+    font-weight: bold;
+    color: #222;
+}
+
+
+.msg .x-box-mc {
+    font-size:14px;
+}
+#msg-div {
+    position:absolute;
+    left:65%;
+    bottom:10px;
+    width:300px;
+    z-index:20000;
+}
+#msg-div .msg {
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+    background: #F6F6F6;
+    border: 2px solid #6f6f6f;
+    margin-bottom: 2px;
+    padding: 10px 15px;
+    color: #555;
+}
+#msg-div .msg h3 {
+    margin: 0 0 8px;
+    font-weight: bold;
+    font-size: 15px;
+}
+#msg-div .msg p {
+    margin: 0;
+}
+
+#footer div.copy {
+    width:150px;
+    float:right;
+    margin: 0 auto;
+    padding:0px 0px 0px;
+    color:gray;
+}
+.ip-color-red{
+    width:110px;
+    float: left;
+    margin: 3px;
+    text-align: center;
+    padding: 3px;
+    background-color: #FBE3E4;
+    border: 1px solid #FBC2C4;
+    border: 1px solid #D00000;
+    color:white;
+    background-color:#810210;
+
+}
+
+.ip-color-green{
+    width:110px;
+    float: left;
+    margin: 3px;
+    text-align: center;
+    padding: 3px;
+    background-color: #E6EFC2;
+    border: 1px solid #C6D880;
+    border: 1px solid #88BD32;
+}

@@ -1,0 +1,58 @@
+
+<?php
+if (isset ($this->urls) && count ($this->urls) > 0) {
+    $url_first = $this->url(array_merge($this->urls, array('page' => $this->first)));
+    $url_previous = $this->url(array_merge($this->urls, array('page' => $this->previous)));
+    $url_next = $this->url(array_merge($this->urls, array('page' => $this->next)));
+    $url_last = $this->url(array_merge($this->urls, array('page' => $this->last)));
+} else {
+    $url_first = $this->url (array ('page' => $this->first));
+    $url_previous = $this->url (array ('page' => $this->previous));
+    $url_next = $this->url (array ('page' => $this->next));
+    $url_last = $this->url (array ('page' => $this->last));
+}
+?>
+    <?php if ($this->pageCount): ?>
+    <div class="paginationControl">
+        <?php echo $this->firstItemNumber; ?> - <?php echo $this->lastItemNumber; ?>
+        总记录数:<b><?php echo $this->totalItemCount; ?></b> 条
+        <!-- First page link -->
+    <?php if (isset ($this->previous)): ?>
+
+            <a href="<?php echo $url_first; ?>">
+                首页
+            </a> |
+        <?php else: ?>
+            <span class="disabled">首页</span> |
+        <?php endif; ?>
+
+        <!-- Previous page link -->
+    <?php if (isset ($this->previous)): ?>
+            <a href="<?php echo  $url_previous; ?>">
+                &lt; 上一页
+            </a> |
+        <?php else: ?>
+            <span class="disabled">&lt; 上一页</span> |
+        <?php endif; ?>
+
+        <!-- Next page link -->
+    <?php if (isset ($this->next)): ?>
+            <a href="<?php echo $url_next; ?>">
+                下一页 &gt;
+            </a> |
+        <?php else: ?>
+            <span class="disabled">下一页 &gt;</span> |
+        <?php endif; ?>
+
+        <!-- Last page link -->
+    <?php if (isset ($this->next)): ?>
+            <a href="<?php echo $url_last; ?>">
+                尾页
+            </a>
+        <?php else: ?>
+            <span class="disabled">尾页</span>
+    <?php endif; ?>
+
+    </div>
+<?php endif; ?>
+

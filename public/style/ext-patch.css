@@ -1,0 +1,19 @@
+/* Ext4.0中文字体修正补丁*/
+.x-panel-header-text, .x-window-header-text,.x-grid-cell,.x-btn-inner,.x-column-header {
+    font-size:9pt!important;
+}
+/* -------End-----Ext4.0中文字体修正补丁----*/
+
+.ext-dataTable{
+    background-color: #f7f7f7;
+    width: 100%;
+    word-wrap: break-all;
+    word-break:break-all;
+    margin: 4px;
+}
+.ext-dataTable td{
+    border: 1px solid #99BCE8;
+    padding:2px;
+    word-wrap: break-all;
+    word-break:break-all;
+}
