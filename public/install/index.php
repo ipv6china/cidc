@@ -160,7 +160,7 @@ if ($method == 'show_license') {//note 显示协议
             'dbhost' => $dbhost, 'dbuser' => $dbuser, 'dbpw' => $dbpw, 'dbname' => $dbname, 'tablepre' => $tablepre, 'dotpath' => $dotpath
         );
 
-        config_edit($_config);
+        //config_edit($_config);
 
         $db = new mysqlDb;
         $db->connect($dbhost, $dbuser, $dbpw, $dbname, 1, DBCHARSET);

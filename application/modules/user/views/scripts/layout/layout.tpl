@@ -22,7 +22,6 @@
                     <li style="display:none;" <{if "idc" == $moduleName && "networkequipment" == $controllerName}> class="current"<{/if}>><a href="<{$this->baseUrl('idc/networkequipment')}>">网络</a></li>
                     <li<{if "idc" == $moduleName && "domain" == $controllerName}> class="current"<{/if}>><a href="<{$this->baseUrl('idc/domain')}>">域名</a></li>
                     <li<{if "idc" == $moduleName && "log" == $controllerName}> class="current"<{/if}>><a href="<{$this->baseUrl('idc/log')}>">日志</a></li>
-                    <li<{if "tools" == $moduleName && "graphviz" == $controllerName}> class="current"<{/if}>><a href="<{$this->baseUrl('tools')}>">工具</a></li>
                     <li<{if "user" == $moduleName && "user" == $controllerName}> class="current"<{/if}>><a href="<{$this->baseUrl('user')}>">用户</a></li>
                 </ul>
             </div>
