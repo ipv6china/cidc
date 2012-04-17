@@ -189,7 +189,7 @@ Ext.onReady(function(){
             }
         },
         root: {
-            text: 'ComsneIDC',
+            text: 'IDC',
             id: 'root',
             qtip:'根节点下默认显示未入机柜的设备',
             expanded: true
