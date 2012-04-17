@@ -85,7 +85,7 @@ $dirfile_items = array
     (
     'config' => array('type' => 'dir', 'path' => '../logs'),
     'upload' => array('type' => 'dir', 'path' => './upload'),
-    'templates_c' => array('type' => 'dir', 'path' => './templates_c'),
+    'cache' => array('type' => 'dir', 'path' => '../cache'),
 );
 
 //note 表单配置
