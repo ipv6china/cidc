@@ -180,14 +180,16 @@ if ($method == 'show_license') {//note 显示协议
         //管理员
         $sql_admin = "INSERT INTO " . $tablepre . "user VALUES (NULL, '$username', 'IDC', '$username', '" . md5($password) . "', '', '$email', '$username', '0', '1', '0', '0', " . time() . ", '127.0.0.1', '8', '')";
         runquery($sql_admin);
-
-        $configData = "\n\n".'[release : production]' . "\n" .
+        
+        $configData = file_get_contents(ROOT_PATH.'../application/configs/application_default.ini');
+        
+        $configData .= "\n\n".'[release : production]' . "\n" .
                 'resources.db.params.host = ' . $dbhost . "\n" .
                 'resources.db.params.username = ' . $dbuser . "\n" .
                 'resources.db.params.password = ' . $dbpw . "\n" .
                 'resources.db.params.dbname = ' . $dbname . "\n";
 
-        file_put_contents(ROOT_PATH.'../application/configs/application.ini',$configData, FILE_APPEND);
+        file_put_contents(ROOT_PATH.'../application/configs/application.ini',$configData);
 
 
         VIEW_OFF && show_msg('initdbresult_succ');
