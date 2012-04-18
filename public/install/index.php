@@ -184,10 +184,10 @@ if ($method == 'show_license') {//note 显示协议
         $configData = file_get_contents(ROOT_PATH.'../application/configs/application_default.ini');
         
         $configData .= "\n\n".'[release : production]' . "\n" .
-                'resources.db.params.host = ' . $dbhost . "\n" .
-                'resources.db.params.username = ' . $dbuser . "\n" .
-                'resources.db.params.password = ' . $dbpw . "\n" .
-                'resources.db.params.dbname = ' . $dbname . "\n";
+                'resources.db.params.host = '.'"' . $dbhost .'"'. "\n" .
+                'resources.db.params.username = '.'"' . $dbuser .'"'. "\n" .
+                'resources.db.params.password = ' .'"'. $dbpw .'"'. "\n" .
+                'resources.db.params.dbname = ' .'"'. $dbname .'"'. "\n";
 
         file_put_contents(ROOT_PATH.'../application/configs/application.ini',$configData);
 
