@@ -68,7 +68,7 @@ define('MISSING_PARAMETER', 33);
 define('LOCK_FILE_NOT_TOUCH', 34);
 
 //note 定义需要检测的函数
-$func_items = array('mysql_connect', 'fsockopen', 'gethostbyname', 'file_get_contents');
+$func_items = array('mysql_connect', 'fsockopen', 'gethostbyname', 'file_get_contents','json_decode');
 
 //note 环境要求定义
 $env_items = array
