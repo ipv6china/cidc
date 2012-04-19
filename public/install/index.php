@@ -48,8 +48,14 @@ if (file_exists($lockfile)) {//note 安装锁定检测
 if ($method == 'show_license') {//note 显示协议
     show_license();
 } elseif ($method == 'env_check') {//note 服务器环境检测
+    //pdo_mysql 检测
+    $isPdoMysqlInstalled = check_pdo_mysql();
+    if (!$isPdoMysqlInstalled) {
+        show_msg('PDO_mysql', '必须安装 pdo_mysql 扩展才能继续', false, true);
+    }
     //note 提前给接口单独检测函数
     VIEW_OFF && function_check($func_items);
+
 
     //note 环境检测
     env_check($env_items);
@@ -180,16 +186,16 @@ if ($method == 'show_license') {//note 显示协议
         //管理员
         $sql_admin = "INSERT INTO " . $tablepre . "user VALUES (NULL, '$username', 'IDC', '$username', '" . md5($password) . "', '', '$email', '$username', '0', '1', '0', '0', " . time() . ", '127.0.0.1', '8', '')";
         runquery($sql_admin);
-        
-        $configData = file_get_contents(ROOT_PATH.'../application/configs/application_default.ini');
-        
-        $configData .= "\n\n".'[release : production]' . "\n" .
-                'resources.db.params.host = '.'"' . $dbhost .'"'. "\n" .
-                'resources.db.params.username = '.'"' . $dbuser .'"'. "\n" .
-                'resources.db.params.password = ' .'"'. $dbpw .'"'. "\n" .
-                'resources.db.params.dbname = ' .'"'. $dbname .'"'. "\n";
 
-        file_put_contents(ROOT_PATH.'../application/configs/application.ini',$configData);
+        $configData = file_get_contents(ROOT_PATH . '../application/configs/application_default.ini');
+
+        $configData .= "\n\n" . '[release : production]' . "\n" .
+                'resources.db.params.host = ' . '"' . $dbhost . '"' . "\n" .
+                'resources.db.params.username = ' . '"' . $dbuser . '"' . "\n" .
+                'resources.db.params.password = ' . '"' . $dbpw . '"' . "\n" .
+                'resources.db.params.dbname = ' . '"' . $dbname . '"' . "\n";
+
+        file_put_contents(ROOT_PATH . '../application/configs/application.ini', $configData);
 
 
         VIEW_OFF && show_msg('initdbresult_succ');
