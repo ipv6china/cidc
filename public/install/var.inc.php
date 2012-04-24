@@ -83,6 +83,7 @@ $env_items = array
 //note 可写目录和文件和设置
 $dirfile_items = array
     (
+    'public' => array('type' => 'dir', 'path' => '../public'),
     'config' => array('type' => 'dir', 'path' => '../logs'),
     'upload' => array('type' => 'dir', 'path' => './upload'),
     'cache' => array('type' => 'dir', 'path' => '../cache'),
