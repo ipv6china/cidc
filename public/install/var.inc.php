@@ -84,7 +84,8 @@ $env_items = array
 $dirfile_items = array
     (
     'public' => array('type' => 'dir', 'path' => '../public'),
-    'config' => array('type' => 'dir', 'path' => '../logs'),
+    'config' => array('type' => 'dir', 'path' => '../application/configs'),
+    'log' => array('type' => 'dir', 'path' => '../logs'),
     'upload' => array('type' => 'dir', 'path' => './upload'),
     'cache' => array('type' => 'dir', 'path' => '../cache'),
 );

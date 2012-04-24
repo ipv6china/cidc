@@ -38,8 +38,15 @@ if (empty($method)) {
     show_msg('method_undefined', $method, 0);
 }
 
+//note 基本检测
+if (file_exists($lockfile)) {//note 安装锁定检测
+    show_msg('install_locked', '', 0);
+} elseif (!class_exists('mysqlDb')) {//note 数据库类是否加载检测
+    show_msg('database_nonexistence', '', 0);
+}
+
 //@todo 临时检测是否安装在根目录
-$currentUrl = $_SERVER['REQUEST_URI'];
+$currentUrl = $_SERVER['SCRIPT_NAME'];
 if (0 != strcmp('/install/index.php', $currentUrl)) {
     $ret = '<h1>Notice</h1>';
     $ret .= '本程序目前只能安装在网站跟目录下，且 public 要设置成网站根目录<br />';
@@ -50,7 +57,7 @@ if (0 != strcmp('/install/index.php', $currentUrl)) {
     ServerAdmin cidc@cidc.com
     DocumentRoot "/www/cidcomsenz.com/public"
     ServerName cidc.comsenz.com
-<Directory "/www/cidc.comsenz.com/public"> 
+<Directory "/"> 
     Options Indexes FollowSymLinks
     AllowOverride All
     Order allow,deny
@@ -87,13 +94,6 @@ if (0 != strcmp('/install/index.php', $currentUrl)) {
     $ret .= '<br />';
     echo $ret;
     exit;
-}
-
-//note 基本检测
-if (file_exists($lockfile)) {//note 安装锁定检测
-    show_msg('install_locked', '', 0);
-} elseif (!class_exists('mysqlDb')) {//note 数据库类是否加载检测
-    show_msg('database_nonexistence', '', 0);
 }
 
 if ($method == 'show_license') {//note 显示协议
