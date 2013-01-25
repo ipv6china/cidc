@@ -153,7 +153,7 @@ class Etao_Image_GraphViz
      */
     public function imageFromCode($code)
     {
-        $filename = sys_get_temp_dir() . time();
+        $filename = tempnam(sys_get_temp_dir(), 'CIDC_');
         file_put_contents($filename, $code);
         return $this->image($filename);
     }
@@ -681,7 +681,7 @@ class Etao_Image_GraphViz
         $serializedGraph = serialize($this->graph);
 
         if(empty($file)) {
-            $file = sys_get_temp_dir() . 'graph_' . time();
+            $file = tempnam(sys_get_temp_dir(), 'CIDC_');
         }
 
         file_put_contents($file, $serializedGraph);
@@ -962,7 +962,7 @@ class Etao_Image_GraphViz
         $parsedGraph = $this->parse();
         if(!empty($parsedGraph)) {
             if(empty($file)) {
-                $file = sys_get_temp_dir() . 'graph_' . time();
+                $file = tempnam(sys_get_temp_dir(), 'CIDC_');
             }
             file_put_contents($file, $parsedGraph);
             return $file;
