@@ -84,9 +84,12 @@ Allow from all
 ```
 
 ### nginx 配置 
+
 如果你使用的是nginx web 服务器，可以参考下面的典型配置
 
-``` server { listen 80; server_name cidc.comsenz.com;
+``` 
+
+server { listen 80; server_name cidc.comsenz.com;
 
 location / {
     root   /www/idc.comsenz.com/public;
@@ -109,6 +112,7 @@ location ~ \.php$ {
 }
 
 ```
+
 
 ## CIDC代码安装
 
